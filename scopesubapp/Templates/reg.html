@@ -1,0 +1,127 @@
+{% extends 'layout.html' %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Registration</title>
+    </head>
+    {% block homecontent %}
+    <body style="background-color: rgb(9, 9, 56);">
+        <div style="color: #92A1C2;">
+        <h1 style="text-align: center;padding-top: 3%;">Registration</h1>
+        <div style="height: 75%;width: 35%;margin-left: 30%;padding-left: 4%;font-size: large;border: 1px solid #92A1C2;margin-bottom: 5%;">
+            <br><br>
+            <form action="{% url 'register' %}" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <label for="fname">First Name</label><br>
+                <input type="text" id="fname" name="fname" style="background-color: #92A1C2;border: none;margin-top: 2%;padding: 0.1%;"><br><br>
+
+                <label for="lname">Last Name</label><br>
+                <input type="text" id="lname" name="lname" style="background-color: #92A1C2;border: none;margin-top: 2%;"><br><br>
+
+                <label for="gender">Gender</label><br>
+                <input type="radio" id="gender_m" name="gender" value="male">Male
+                <input type="radio" id="gender_f" name="gender" value="female">Female
+                <input type="radio" id="gender_o" name="gender" value="others">Others
+                <br><br>
+
+                <label for="dob">Date Of Birth</label><br>
+                <input type="date" id="dob" name="dob" style="background-color: #92A1C2;border: none;margin-top: 2%;"><br><br>
+
+                <label for="email">Email</label><br>
+                <input type="email" id="email" name="email" style="background-color: #92A1C2;border: none;margin-top: 2%;"><br><br>
+
+                <label for="phn" >Phone Number</label><br>
+                <input type="tel" id="phn" name="phn" pattern="\d{10,15}" title="Phone number must be between 10 and 15 digits and contain only digits." style="background-color: #92A1C2;border: none;margin-top: 2%;">
+                <br><br>
+
+                <label for="country">Country</label>
+                <select name="country" id="country" style="background-color: #92A1C2;">
+                    <option value="">Select Country</option>
+                </select><br><br>
+
+                <label for="state">State</label>
+                <select name="state" id="state" style="background-color: #92A1C2;">
+                    <option value="">Select State</option>
+                </select><br><br>
+
+                <label for="city">City</label>
+                <select name="city" id="city" style="background-color: #92A1C2;">
+                    <option value="">Select City</option>
+                </select><br><br>
+
+                <label for="hobbies">Hobbies</label>
+                <input type="checkbox" name="hobbies" value="Reading"> Reading
+                <input type="checkbox" name="hobbies" value="Sports"> Sports
+                <input type="checkbox" name="hobbies" value="Music"> Music
+
+                <br><br>
+
+                <label for="avatar">Avatar</label><br>
+                <input type="file" id="avatar" name="avatar" style="border: none;margin-top: 2%;"><br><br>
+                <button type="submit" style="margin-left: 30%;color: rgb(5, 5, 96);background-color: #92A1C2;padding: 2% 10%;margin-bottom: 10%;margin-top: 3%;">Submit</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        const locationData={
+            India:{
+                Kerala:["Trivandrum","Kochi","Calicut"],
+                TamilNadu:["Chennai","Coimbatore","Madurai","Nagercoil"],
+                Karnataka:["Bengaluru","Mysuru","Mangaluru"]
+            },
+            USA:{
+                California:["Los Angeles","San Fransisco","San Diego"],
+                Texas:["Houston","Dallas","Austin"],
+                Florida:["Miami","Orlando","Tampa"]
+            },
+            UK:{
+                England:["London","Manchester","Birmingham"],
+                Scotland:["Edinburgh","Glasgow","Aberdeen"],
+                Wales:["Cardiff","Swansea","Newport"]
+            }
+        };
+
+        const countrySelect=document.getElementById("country")
+        const stateSelect=document.getElementById("state")
+        const citySelect=document.getElementById("city")
+
+        for(let country in locationData){
+            const option=document.createElement("option");
+            option.value=country;
+            option.textContent=country;
+            countrySelect.appendChild(option);
+        }
+
+        countrySelect.addEventListener("change",()=>{
+            stateSelect.innerHTML='<option value="">Select State</option>';
+            citySelect.innerHTML='<option value="">Select City</option>';
+            const selectedCountry=countrySelect.value;
+
+            if(selectedCountry && locationData[selectedCountry]) {
+                for(let state in locationData[selectedCountry]) {
+                    const option=document.createElement("option");
+                    option.value=state;
+                    option.textContent=state;
+                    stateSelect.appendChild(option);
+                }
+            }
+        });
+
+        stateSelect.addEventListener("change",()=> {
+            citySelect.innerHTML='<option value="">Select City</option>';
+            const selectedCountry=countrySelect.value;
+            const selectedState=stateSelect.value;
+
+            if(selectedState && locationData[selectedCountry][selectedState]) {
+                locationData[selectedCountry][selectedState].forEach(city => {
+                    const option=document.createElement("option");
+                    option.value=city;
+                    option.textContent=city;
+                    citySelect.appendChild(option);
+                });
+            }
+        });
+    </script>
+        {% endblock %}
+    </body>
+</html>

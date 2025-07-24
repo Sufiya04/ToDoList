@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+<!DOCTYPE html>
+<html>
+    <head>
+        {% load static %}
+        <title>Home</title>
+    </head>
+    <body>
+        {% block homecontent %}
+        <div style="margin-left: 14%;width: 75%;text-align: center;">
+        <h1 style="color: rgb(5, 5, 96);text-align: center;">SCOPE INDIA</h1>
+        <img src="{% static 'images/scope.jpeg' %}" alt="scope" style="height: 16%;width: 16%;">
+        <br><br>
+        <h2 style="color: rgb(5,5,96);text-align: center;">One of India's best Training destinations for Software, Networking, and Cloud Computing courses with 17 years of Industrial experience.</h2>
+        <p style="line-height: 1.5;letter-spacing: 1px;word-spacing: 10px;text-align: left;">Software, Networking, and Cloud Professional Education Centre in Kerala and Tamil Nadu from Suffix E Solutions with <b>WORKING PROFESSIONALS</b> oriented on-the-job TRAINING model. <b>SCOPE INDIA</b> provides courses for Software Programming in Python (Data Science | Artificial Intelligence | Machine Learning | Deep Learning, Data Analytics), Java, PHP, .Net, MERN,Software Testing Manual and Automation, Cloud Computing (AWS | Azure), Server Administration (MicroSoft MCSE | Linux RHCE), Networking (CCNA), DevOps, Mobile App Development in Flutter, and Digital Marketing. A Training with a 100% Trusted Job-Based Internship Model. <b>SCOPE INDIA</b> has a Strong Placement Cell that provides jobs to thousands of students annually. We assure you, you won't regret it after training from <b>SCOPE INDIA!!</b></p>
+        </div>
+        {% endblock %}
+    </body>
+</html>

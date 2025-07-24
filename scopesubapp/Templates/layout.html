@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% load static %}
+        <title>Layout</title>
+        <style>
+            header
+            {
+                background-color: rgb(5,5,36);
+                height: 185px;
+            }
+            nav
+            {
+                display: flex;
+                gap: 7%;
+            }
+            header a
+            {
+                color: antiquewhite;
+            }
+            .scope
+            {
+                height: 40%;
+                width: 40%;
+                margin-left: 32%;
+                padding-top: 1.5%;
+            }
+            footer
+            {
+                background-color: rgb(5, 5, 36);
+                color: white;
+                text-align: center;
+                height: auto;
+                padding-bottom: 10%;
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                font-size: large;
+            }
+            footer a
+            {
+                text-decoration: none;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <img src="{% static 'images/logo.png' %}" class="scope" alt="scope">
+            <br><br>
+            <nav >
+                <a href="home" target="_self" style="padding-left: 7%;">Home</a>
+                <a href="about" target="_self">About Us</a>
+                <a href="contact" target="_self">Contact</a>
+                <a href="register" target="_self">Registration</a>
+                <a href="signin" target="_self">Login</a>
+            </nav>
+        </header>
+        <br><br>
+        {% block homecontent %}
+        {% endblock %}
+        <br><br>
+        <footer>
+            <div style="display: flex;text-align: center;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+                <div style="padding: 6% 2%;width: 33%;">
+                    <h1 style="color:  #5c94b6;"><strong>1000+</strong></h1>
+                    <h4 style="letter-spacing: 2px;word-spacing: 10px;line-height: 1.5;">STUDENTS ARE <br> TRAINED EVERY YEAR</h4>
+                </div>
+                <div style="width: 34%;padding: 2%;">
+                    <h1 style="color: #5c94b6;"><strong>30+</strong></h1>
+                    <h4 style="letter-spacing: 2px;word-spacing: 10px;">COMPUTER COURSES</h4>
+                </div>
+                <div style="padding: 6% 2%;width: 33%;">
+                    <h1 style="color: #5c94b6;"><strong>95%</strong></h1>
+                    <h4 style="letter-spacing: 2px;word-spacing: 10px;line-height: 1.5;">STUDENTS ARE <br> GETTING <br> PLACED AFTER EVERY YEAR</h4>
+                </div>
+            </div>
+            <div style="letter-spacing: 1px;">
+                <img src="{% static 'images/scopelogo.png' %}" alt="" width="40%">
+                <h5>Center for Software,Networking & Cloud Education</h5>
+                <h6>Kerala: Technopark TVM | Kaloor Kochi, Tamil Nadu: Distillery Road | Palace Road Nagercoil</h6>
+            </div>
+            <div style="padding-top: 3%;">
+                <img src="{% static 'images/f1.png' %}" width="40%">
+                <h5>An ISO 9001:2015 Certified Company</h5>
+            </div>
+            <div style="padding: 1%;">
+                <h5>All Rights Reserved <strong>Suffix E Solutions</strong> &copy; 2007-2025</h5>
+            </div>
+            <div>
+                <a href="tel:+919745936073">9745936073 (TPK)</p>
+                <a href="tel:+919745936073">9745936073 (TVM)</p>
+                <a href="tel:+917592939481">7592939481 (EKM)</p>
+                <a href="tel:+918075536185">8075536185 (NGL)</p>
+                <a href="mailto:info@scopeindia.org">info@scopeindia.org</p>
+            </div>
+        </footer>
+    </body>
+</html>

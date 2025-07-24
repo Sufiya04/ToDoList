@@ -1,0 +1,101 @@
+{% block homecontent %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        .input-container {
+            position: relative;
+            margin-bottom: 5%;
+        }
+
+        .input-container input {
+            width: 70%;
+            height: 10%;
+            padding: 3% 15%; 
+            border: 1px solid;
+            border-radius: 10px;
+            font-size: 16px;
+        }
+
+        .input-container svg {
+            position: absolute;
+            left: 10%; 
+            top: 37%;
+            transform: translateY(-50%);
+            pointer-events: none;
+            fill: rgba(113, 106, 106, 0.8);
+        }
+        @media only screen and (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                justify-content: space-around;
+            }
+
+            .imgwrapper {
+                display: block;
+                text-align: center;
+                
+            }
+
+            .imgwrapper img {
+                width: 40%;
+                height: auto;
+            }
+
+            .formwrapper {
+                width: 100%;
+            }
+
+            button {
+                width: 38%;
+                margin: auto;
+            }
+        }
+        </style>
+</head>
+<body>
+    <div class="container" style="display: flex;width: 100%;justify-content: center;box-sizing: border-box;">
+        <div class="imgwrapper" style="width: 100%;text-align: center;;padding-top: 13.5%;">
+            <img src="{% static 'images/cartoon2.jpg' %}" style="width: 40%;height: auto;padding-top: 4%;">
+        </div>
+        <div class="formwrapper" style="border: none;height: auto;width: 100%;height: 75%;margin-top: 7%;padding-right: 5%;">
+        <h2 style="color: rgb(5, 5, 96);text-align: center;">Get Started</h2>
+        <form method="post">
+            {% csrf_token %}
+            <div class="input-container">
+            <input type="text" id="lg_name" name="username" placeholder="Enter Username" onmouseover="this.style.boxShadow='10px 10px 20px rgba(0,0,0,0.4)';" onmouseout="this.style.boxShadow='5px 5px 15px rgba(0,0,0,0.2)';"><br><br>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+            </svg>
+        </div>
+        <div class="input-container">
+            <input type="email" name="email" id="lg_email" placeholder="Enter Email" onmouseover="this.style.boxShadow='10px 10px 20px rgba(0,0,0,0.4)';" onmouseout="this.style.boxShadow='5px 5px 15px rgba(0,0,0,0.2)';"><br><br>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
+                <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414zM0 4.697v7.104l5.803-3.558zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586zm3.436-.586L16 11.801V4.697z"/>
+              </svg>
+        </div>
+            <div class="input-container">
+            <input type="password" name="password1" id="pass1" placeholder="Enter Password" onmouseover="this.style.boxShadow='10px 10px 20px rgba(0,0,0,0.4)';" onmouseout="this.style.boxShadow='5px 5px 15px rgba(0,0,0,0.2)';"><br><br>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lock" viewBox="0 0 16 16">
+                <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2m3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2M5 8h6a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1"/>
+            </svg>
+        </div>
+        <div class="input-container">
+            <input type="password" name="password2" id="pass2" placeholder="Confirm Password" onmouseover="this.style.boxShadow='10px 10px 20px rgba(0,0,0,0.4)';" onmouseout="this.style.boxShadow='5px 5px 15px rgba(0,0,0,0.2)';"><br><br>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lock" viewBox="0 0 16 16">
+                <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2m3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2M5 8h6a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1"/>
+            </svg>
+        </div>
+            <button type="submit" style="margin-left: 40%;background: linear-gradient(to right,rgb(43, 43, 137),#92A1C2);color: rgb(233, 242, 252);padding: 2% 10%;border: none;">Sign Up</button>
+        </form>
+    </div>
+    
+</div>
+    {% endblock %}
+</body>
+</html>

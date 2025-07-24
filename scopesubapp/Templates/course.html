@@ -1,0 +1,59 @@
+{% extends 'dashboard.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses</title>
+</head>
+{% block homecontent %}
+<body>
+    <h1 style="margin: 25px;padding-top: 10px;">Courses</h1>
+    <div style="display: grid;gap: 20px;">
+        <div style="width: 85%; background-color: rgba(238, 238, 238, 0.826); height: 150px;margin-left: 20px;border-radius: 15px;display: flex;" onmouseover="this.style.boxShadow='10px 10px 20px rgba(0,0,0,0.4)';" onmouseout="this.style.boxShadow='5px 5px 15px rgba(0,0,0,0.2)';">
+            <img src="{% static 'images/python1.jpg' %}" height="100px" width="100px" style="padding: 25px;">
+            <h2 style="padding-top: 40px;">Python FullStack</h2>
+            <h4 style="padding-top: 45px;padding-left: 200px;">6 months</h4>
+            <h4 style="padding-top: 45px;padding-left: 75px;">Fee: &#8377;35,000</h4>
+        </div>
+        <div style="width: 85%; background-color: rgba(238, 238, 238, 0.826); height: 150px;margin-left: 20px;border-radius: 15px;display: flex;" onmouseover="this.style.boxShadow='10px 10px 20px rgba(0,0,0,0.4)';" onmouseout="this.style.boxShadow='5px 5px 15px rgba(0,0,0,0.2)';">
+            <img src="{% static 'images/java1.jpg' %}" height="100px" width="100px" style="padding: 25px;">
+            <h2 style="padding-top: 40px;">Java FullStack</h2>
+            <h4 style="padding-top: 45px;padding-left: 225px;">6 months</h4>
+            <h4 style="padding-top: 45px;padding-left: 75px;">Fee: &#8377;35,000</h4>
+        </div>
+        <div style="width: 85%; background-color: rgba(238, 238, 238, 0.826); height: 150px;margin-left: 20px;border-radius: 15px;display: flex;" onmouseover="this.style.boxShadow='10px 10px 20px rgba(0,0,0,0.4)';" onmouseout="this.style.boxShadow='5px 5px 15px rgba(0,0,0,0.2)';">
+            <img src="{% static 'images/.net.jpg' %}" height="100px" width="100px" style="padding: 25px;">
+            <h2 style="padding-top: 40px;">.Net FullStack</h2>
+            <h4 style="padding-top: 45px;padding-left: 230px;">6 months</h4>
+            <h4 style="padding-top: 45px;padding-left: 75px;">Fee: &#8377;35,000</h4>
+        </div>
+        <div style="width: 85%; background-color: rgba(238, 238, 238, 0.826); height: 150px;margin-left: 20px;border-radius: 15px;display: flex;" onmouseover="this.style.boxShadow='10px 10px 20px rgba(0,0,0,0.4)';" onmouseout="this.style.boxShadow='5px 5px 15px rgba(0,0,0,0.2)';">
+            <img src="{% static 'images/test.png' %}" height="100px" width="100px" style="padding: 25px;">
+            <h2 style="padding-top: 40px;">Software Testing</h2>
+            <h4 style="padding-top: 45px;padding-left: 200px;">6 months</h4>
+            <h4 style="padding-top: 45px;padding-left: 75px;">Fee: &#8377;35,000</h4>
+        </div>
+        <div style="width: 85%; background-color: rgba(238, 238, 238, 0.826); height: 150px;margin-left: 20px;border-radius: 15px;display: flex;" onmouseover="this.style.boxShadow='10px 10px 20px rgba(0,0,0,0.4)';" onmouseout="this.style.boxShadow='5px 5px 15px rgba(0,0,0,0.2)';">
+            <img src="{% static 'images/data.jpg' %}" height="100px" width="100px" style="padding: 25px;">
+            <h2 style="padding-top: 40px;">Data Analysis</h2>
+            <h4 style="padding-top: 45px;padding-left: 230px;">6 months</h4>
+            <h4 style="padding-top: 45px;padding-left: 75px;">Fee: &#8377;35,000</h4>
+        </div>
+        <div style="width: 85%; background-color: rgba(238, 238, 238, 0.826); height: 150px;margin-left: 20px;border-radius: 15px;display: flex;" onmouseover="this.style.boxShadow='10px 10px 20px rgba(0,0,0,0.4)';" onmouseout="this.style.boxShadow='5px 5px 15px rgba(0,0,0,0.2)';">
+            <img src="{% static 'images/php.jpg' %}" height="100px" width="100px" style="padding: 25px;">
+            <h2 style="padding-top: 40px;">PHP</h2>
+            <h4 style="padding-top: 45px;padding-left: 325px;">6 months</h4>
+            <h4 style="padding-top: 45px;padding-left: 75px;">Fee: &#8377;35,000</h4>
+        </div>
+        <div style="width: 85%; background-color: rgba(238, 238, 238, 0.826); height: 150px;margin-left: 20px;border-radius: 15px;display: flex;margin-bottom: 20px;" onmouseover="this.style.boxShadow='10px 10px 20px rgba(0,0,0,0.4)';" onmouseout="this.style.boxShadow='5px 5px 15px rgba(0,0,0,0.2)';">
+            <img src="{% static 'images/digi.jpg' %}" height="100px" width="100px" style="padding: 25px;">
+            <h2 style="padding-top: 40px;">Digital Marketing</h2>
+            <h4 style="padding-top: 45px;padding-left: 190px;">6 months</h4>
+            <h4 style="padding-top: 45px;padding-left: 75px;">Fee: &#8377;35,000</h4>
+        </div>
+    </div>
+</body>
+{% endblock %}
+</html>

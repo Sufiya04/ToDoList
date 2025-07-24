@@ -1,0 +1,22 @@
+{% extends 'dashboard.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block homecontent %}
+    <div style="padding: 2% 4%;">
+        <h1>Welcome, {{ user.username }}</h1>
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}  <!-- This will render the form fields in <p> tags -->
+            <button type="submit">Save Changes</button>
+        </form>
+        
+    </div>    
+    {% endblock %}
+</body>
+</html>

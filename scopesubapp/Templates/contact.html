@@ -1,0 +1,166 @@
+{% extends 'layout.html' %}
+<!DOCTYPE html>
+{% block homecontent %}
+<html>
+    <head>
+        <title>Contact</title>
+        <!-- <style>
+            @media (max-width: 600px) {
+                .contact {
+                    flex-direction: row;
+                    justify-content: space-around;
+                }
+                .info, .conform {
+                    width: 92%;
+                    padding: 0 15%;
+                }
+                .conform button {
+                    width: 40%;
+                    margin: 0 auto;
+                }
+            }
+        </style> -->
+    </head>
+    <body style="background-color: rgb(5, 5, 36);width: 100%;box-sizing: border-box;">
+        <div class="contact" style="background-color: white;display: flex;align-items: center;">
+            <div class="info" style="background-color:  rgb(103, 103, 160);color: rgb(255, 255, 255);padding: 8% 4%;">
+                <h1 style="text-align: center;color: rgb(5, 5, 36);padding-bottom: 2%;">Contact Details</h1>
+                <h4>NAGERCOIL, TAMILNADU</h4>
+                <p>&#x1F4CD;&nbsp;<b>SCOPE INDIA</b>, Near WCC College, Palace Rd, Nagercoil, Tamil Nadu 629001</p>
+                <p>&#x1F4DE;&nbsp;8075536185</p>
+                <p>&#x1F4E7;&nbsp;ngl@scopeindia.prg</p>
+                <p>&#x1F517;&nbsp;www.scopeindia.com</p>
+                <p>&#x1F30D;&nbsp;Location Route Map</p>
+            </div>
+            <br><br>
+            <div class="conform" style="margin-left: 7%;width: 35%;padding-top: 5%;">
+                <h1 style="color: rgb(5, 5, 96);text-align: center;">Contact Form</h1>
+                <form action="" method="POST">
+                    {% csrf_token %} 
+                    <!-- <label for="name">Name</label> -->
+                    <input type="text" name="name" id="name" placeholder="Name" style="border: none;border-bottom: 1px solid #aaa;width: 100%;font-size: 15px;padding: 2% 1% ;"><br><br>
+                    <!-- <label for="email">Email</label> -->
+                    <input type="text" name="email" id="email" placeholder="Email" style="border: none;border-bottom: 1px solid #aaa;width: 100%;font-size: 15px;padding: 2% 1% ;"><br><br>
+                    <!-- <label for="subject">Subject</label> -->
+                    <input type="text" name="subject" id="subject" placeholder="Subject" style="border: none;border-bottom: 1px solid #aaa;width: 100%;font-size: 15px;padding: 2% 1% ;"><br><br>
+                    <!-- <label for="message">Message</label> -->
+                    <input type="text" name="message" id="message" placeholder="Message" style="border: none;border-bottom: 1px solid #aaa;width: 100%;font-size: 15px;padding: 2% 1% ;">
+                    <br><br>
+                    <button type="submit" style="margin-left: 40%;background: linear-gradient(to right,rgb(103, 103, 160),rgb(170, 170, 209));color: rgb(5, 5, 36);padding: 3% 6%;border: none;margin-top: 2%;">Send Mail</button>
+                </form>
+            </div>
+        </div>
+    </body>
+    {% endblock %}
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Contact</title>
+        <style>
+            body {
+                background-color: rgb(5, 5, 36);
+                width: 100%;
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            .container {
+                background-color: white;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 5% 0;
+                min-height: 100vh;
+            }
+            .contact-info, .contact-form {
+                background-color: rgb(103, 103, 160);
+                color: white;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                width: 90%;
+                max-width: 500px;
+                margin: 20px 0;
+            }
+            .contact-info h1 {
+                text-align: center;
+                color: rgb(5, 5, 36);
+                margin-bottom: 20px;
+            }
+            .contact-info p, .contact-info h4 {
+                margin: 10px 0;
+            }
+            .contact-form h1 {
+                text-align: center;
+                color: rgb(5, 5, 96);
+                margin-bottom: 20px;
+            }
+            .contact-form input {
+                width: 100%;
+                padding: 10px;
+                margin-bottom: 15px;
+                font-size: 15px;
+                border: none;
+                border-bottom: 1px solid #aaa;
+                outline: none;
+            }
+            .contact-form button {
+                display: block;
+                width: 100%;
+                padding: 10px;
+                background-color: rgb(103, 103, 160);
+                color: rgb(5, 5, 36);
+                border: none;
+                cursor: pointer;
+                border-radius: 5px;
+                font-size: 16px;
+            }
+            @media (min-width: 768px) {
+                .container {
+                    flex-direction: row;
+                    justify-content: space-around;
+                }
+                .contact-info, .contact-form {
+                    width: 45%;
+                    margin: 0;
+                }
+                .contact-form button {
+                    width: 40%;
+                    margin: 0 auto;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <!-- Contact Info -->
+            <!-- <div class="contact-info">
+                <h1>Contact Details</h1>
+                <h4>NAGERCOIL, TAMILNADU</h4>
+                <p>&#x1F4CD;&nbsp;<b>SCOPE INDIA</b>, Near WCC College, Palace Rd, Nagercoil, Tamil Nadu 629001</p>
+                <p>&#x1F4DE;&nbsp;8075536185</p>
+                <p>&#x1F4E7;&nbsp;ngl@scopeindia.prg</p>
+                <p>&#x1F517;&nbsp;www.scopeindia.com</p>
+                <p>&#x1F30D;&nbsp;Location Route Map</p>
+            </div>
+
+            <!-- Contact Form -->
+            <!-- <div class="contact-form">
+                <h1>Contact Form</h1>
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    <input type="text" name="name" id="name" placeholder="Name">
+                    <input type="text" name="email" id="email" placeholder="Email">
+                    <input type="text" name="subject" id="subject" placeholder="Subject">
+                    <input type="text" name="message" id="message" placeholder="Message">
+                    <button type="submit">Send Mail</button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html> -->
+
