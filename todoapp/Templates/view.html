@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Task</title>
+        <style>
+            h2
+            {
+                text-decoration: bold;
+            }
+            table
+            {
+                background-color: honeydew;
+                height: 200px;
+                width: 450px;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>Tasks & their Description</h2>
+        <br><br>
+        <table border="1px">
+            <thead>
+                <tr>
+                    <th>Task</th>
+                    <th>Description</th>
+                    <th>Time</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for i in all %}
+                <tr>
+                    
+                    <td>{{ i.task }}</td>
+                    <td>{{ i.des }}</td>
+                    <td>{{ i.time }}</td>
+                    <td>
+                        <a href="{% url 'update' i.id %}">Edit</a>
+                        <a href="{% url 'delete' i.id %}">Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody> 
+        </table>
+    </body>
+</html>
