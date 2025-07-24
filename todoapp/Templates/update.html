@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Update</title>
+    </head>
+    <body>
+        <h1>Update Task</h1>
+        <form action="" method="post">
+            {% csrf_token %}
+            <label for="task">Task</label>
+            <input type="text" value="{{ tsk.task }}">
+            <label for="des">Description</label>
+            <textarea name="description" id="" cols="30" rows="10">
+                {{ tsk.des }}
+            </textarea>
+            <button type="submit">Update Task</button>
+        </form>
+        <br><br>
+        <a href="{% url 'view' %}">Back to Task</a>
+    </body>
+</html>
